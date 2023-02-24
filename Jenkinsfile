@@ -4,7 +4,7 @@ pipeline {
           pollSCM('* * * * *')
      }
      stages {
-          stage("Compile ... hi ben...") {
+          stage("Compile ... hi ben...with timestamp plugin now...") {
                steps {
                     echo 'Compile'
                     sh "chmod +x gradlew"
