@@ -6,8 +6,10 @@ pipeline {
      stages {
           stage("Compile") {
                steps {
-                    cd ./week6_exercise/chapter08/sample1
-                    sh "./gradlew compileJava"
+                   dir("/week6_exercise/chapter08/sample1")
+                   {
+                         sh "./gradlew compileJava"
+                   }
                }
           }
           stage("Unit test") {
