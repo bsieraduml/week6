@@ -6,11 +6,8 @@ pipeline {
      stages {
           stage("Compile") {
                steps {
-                   dir("/week6_exercise/chapter08/sample1")
-                   {
-                         sh "chmod +x gradlew"
-                         sh "./gradlew compileJava"
-                   }
+                    sh "chmod +x gradlew"
+                    sh "./gradlew compileJava"
                }
           }
           stage("Unit test") {
