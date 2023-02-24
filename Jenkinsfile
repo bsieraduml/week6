@@ -14,7 +14,7 @@ pipeline {
                     echo 'before compile java'
                     '''
                     //sh "./gradlew clean"
-                    //sh "./gradlew compileJava"
+                    sh "./gradlew compileJava"
                     sh '''
                     echo 'at the end'
                     '''
