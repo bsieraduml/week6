@@ -6,34 +6,40 @@ pipeline {
      stages {
           stage("Compile") {
                steps {
+                    echo 'Compile'
                     sh "chmod +x gradlew"
                     sh "./gradlew compileJava"
                }
           }
           stage("Unit test") {
                steps {
+                    echo 'Unit test'
                     sh "./gradlew test"
                }
           }
           stage("Code coverage") {
                steps {
+                    echo 'Code coverage'
                     sh "./gradlew jacocoTestReport"
                     sh "./gradlew jacocoTestCoverageVerification"
                }
           }
           stage("Static code analysis") {
                steps {
+                    echo 'Static code analysis'
                     sh "./gradlew checkstyleMain"
                }
           }
           stage("Package") {
                steps {
+                    echo 'Package'
                     sh "./gradlew build"
                }
           }
 
           stage("Docker build") {
                steps {
+                    echo 'Docker build'
                     sh "docker build -t leszko/calculator:${BUILD_TIMESTAMP} ."
                }
           }
