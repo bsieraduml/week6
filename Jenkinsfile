@@ -7,7 +7,7 @@ pipeline {
           stage("Compile") {
                steps {
 
-                    //echo 'hello world'
+                    echo 'hello world'
 
                }
           }
