@@ -23,10 +23,7 @@ pipeline {
                }
           }
           stage("Code coverage") {
-               when {
-                    {
-                         branch 'main'
-                    }
+               when { branch 'main' }
                }                
                steps {
                     echo 'Code coverage only main branch'
