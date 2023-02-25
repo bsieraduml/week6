@@ -13,9 +13,7 @@ pipeline {
           }
           stage("Unit test") {
                when {
-                    not {
-                         branch 'main'
-                    }
+                    not { branch 'main' }
                }               
                steps {
                     echo 'Unit test not main branch'
@@ -24,7 +22,7 @@ pipeline {
           }
           stage("Code coverage") {
                when { branch 'main' }
-               }                
+                               
                steps {
                     echo 'Code coverage only main branch'
                     sh "./gradlew jacocoTestReport"
@@ -33,13 +31,12 @@ pipeline {
           }
           stage("Static code analysis not main branch") {
                when {
-                    not {
-                         branch 'main'
-                    }
-               }                
+                    not { branch 'main' }
+               }                 
                steps {
                     echo 'Static code analysis'
                     sh "./gradlew checkstyleMain"
                }
           }
      }
+}
